@@ -1,1 +1,1 @@
-web:https://www.zhihu.com/search?type=content&q=%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E4%B8%AD%E6%A8%A1%E5%9E%8B
+关于自然与然和机器学习的学习心得，在机器学习的过程中，根据情况判断是否需要学习吴恩达老师的《深度学习》
