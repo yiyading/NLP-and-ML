@@ -45,14 +45,48 @@
 虽然不同数量的变量所对应的线性回归对算力要求天差地别，但是迭代方法在本质上没有不同。
 
 ## 1.模型表示
-我们以房屋交易问题为例，下图分别展示出了房屋-价格回归曲线，训练集设置，以及机器学习的过程。
-![房屋图片](https://github.com/yiyading/NLP-and-ML/blob/master/img/%E6%88%BF%E5%B1%8Bsize-price%E6%8B%BC%E6%8E%A5%E5%9B%BE.jpg)
+我们以房屋交易问题为例，在下图房屋size-price曲线图中，将收集到所有(size,price)坐标标注在坐标系中，画出一条回归曲线。因为给出了**price**这个**正确答案**，该学习成为监督学习。
 
+![房屋size-price曲线图](https://github.com/yiyading/NLP-and-ML/blob/master/img/%E6%88%BF%E5%B1%8Bsize-price%E6%9B%B2%E7%BA%BF%E5%9B%BE.jpg)<br>
+
+在监督学习中，我们有一个数据集，这个数据集被称为训练集。还是以房屋问题为例，我们回归问题的**训练集（Training Set）**如下图所示：
+
+![房屋size-price训练集](https://github.com/yiyading/NLP-and-ML/blob/master/img/%E6%88%BF%E5%B1%8Bsize-price%E8%AE%AD%E7%BB%83%E9%9B%86.jpg)
 > 使用小写m来代表训练样本的数目。<br>
 > x代表特征/输入变量。<br>
 > y代表目标变量/输出变量。<br>
 > (x,y)代表训练集中的实例。<br>
 > (xi,yi)代表第i个观察实例。<br>
 
+h代表学习算法的解决方案或函数，也称作假设（hypothesis）。其实这个h就是数学中的映射，给定输入，经过h变化，得到输出。
 
+![房屋size-price学习过程](https://github.com/yiyading/NLP-and-ML/blob/master/img/%E6%88%BF%E5%B1%8Bsize-price%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B.jpg)
 
+学习算法通过对Training Set的学习，输出一个函数h。这个函数的输入为size，输出为price。h代表一个从size到price的映射。
+
+一种可能表达式为h(x)=a+bx，因为只含有一个特征/输入变量，因此这样的问题叫做单变量线性回归问题。
+> 因为MD文档的格式要求，无法插入下文Hypothesis的函数形式，该h(x)表达式与下文中Hypothesis是相同的概念。
+
+## 2.代价函数（Cost Function） ——又叫“损失函数”
+Cost Function的定义，是为了搞清楚如何把最有可能的直线与数据进行拟合。
+
+![Training and Hypothesis](https://github.com/yiyading/NLP-and-ML/blob/master/img/Training-Set%20and%20Hypothesis.jpg)
+
+直线与数据进行拟合，需要选定合适的参数a、b。在房价问题上便是直线在y轴上的截距和址线斜率。而由参数所决定的直线上的预测值与实际值之间的差距（下图中蓝线）就是**建模误差**。
+
+![某个参数的拟合图像](https://github.com/yiyading/NLP-and-ML/blob/master/img/Training-Set%20and%20Hypothesis.jpg)
+
+我们的目标是选择合适的参数，使得**建模误差的平方和最小**，即使得Cost Function最小。下图展示了Cost Function J和等高线图，等高线图中的坐标有3个。可以看出在三维空间中存在一点使得J最小。
+
+![Cost Function and 等高线图](https://github.com/yiyading/NLP-and-ML/blob/master/img/%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E7%AD%89%E9%AB%98%E7%BA%BF%E5%9B%BE.png)
+
+下图展示了单变量线性回归的本质。
+
+![单变量线性回归的本质](https://github.com/yiyading/NLP-and-ML/blob/master/img/%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%9C%AC%E8%B4%A8.jpg)
+
+## 3.梯度下降
+梯度下降是用来求Cost Function J minimum的算法。
+
+梯度下降的思想是：开始时随机选择一组h的参数组合（在实际问题中，特征可能有很多个，与其对应的参数也会有很多个），计算J，然后找出能让代价函数下降最多的参数组合。直到找到一个局部最小值（local minimum），因为没有尝试所有参数组合，所以不能确认我们得到的局部最小值是否为全局最小值（global minimum）。
+
+![梯度下降找局部最小值](https://github.com/yiyading/NLP-and-ML/blob/master/img/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%8B%9B%E5%B1%80%E9%83%A8%E6%9C%80%E5%B0%8F%E5%80%BC.jpg)
