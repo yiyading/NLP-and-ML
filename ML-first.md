@@ -49,7 +49,7 @@
 
 ![房屋size-price曲线图](https://github.com/yiyading/NLP-and-ML/blob/master/img/%E6%88%BF%E5%B1%8Bsize-price%E6%9B%B2%E7%BA%BF%E5%9B%BE.jpg)<br>
 
-在监督学习中，我们有一个数据集，这个数据集被称为训练集。还是以房屋问题为例，我们回归问题的**训练集（Training Set） **如下图所示：
+在监督学习中，我们有一个数据集，这个数据集被称为训练集。还是以房屋问题为例，我们回归问题的训练集（Training Set）如下图所示：
 
 ![房屋size-price训练集](https://github.com/yiyading/NLP-and-ML/blob/master/img/%E6%88%BF%E5%B1%8Bsize-price%E8%AE%AD%E7%BB%83%E9%9B%86.jpg)
 > 使用小写m来代表训练样本的数目。<br>
