@@ -21,15 +21,15 @@
 ## 2.多变量梯度下降
 多变量线性回归函数的代价函数与单变量线性回归函数的代价函数的构建思想相同，是所有建模误差的平方和；梯度下降的参数更新方法也是相同的。
 
-从下边一系列的函数中可以看出，多变变量与单变量变量唯一不同的地方就在于参数/特征更多了。
+从下边一系列的函数中可以看出，多变变量与单变量变量唯一不同的地方就在于参数/特征更多了。<br>
 
-> 多变量代价函数
-> ![多变量代价函数](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E5%A4%9A%E5%8F%98%E9%87%8F%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0.png)
+> 多变量代价函数<br>
+> ![多变量代价函数](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E5%A4%9A%E5%8F%98%E9%87%8F%E4%BB%A3%E4%BB%B7%E5%87%BD%E6%95%B0.png)<br>
 
-> 多变量梯度下降算法
-> ![多变量梯度下降算法](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E5%A4%9A%E5%8F%98%E9%87%8F%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95.png)
+> 多变量梯度下降算法<br>
+> ![多变量梯度下降算法](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E5%A4%9A%E5%8F%98%E9%87%8F%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95.png)<br>
 
-> 多变量线性回归梯度下降算法，**注意前面引入了X0=1，所以这里的j从0开始**
-> ![多变量线性回归梯度下降算法](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E5%A4%9A%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95.png)
+> 多变量线性回归梯度下降算法，**注意前面引入了X0=1，所以这里的j从0开始**<br>
+> ![多变量线性回归梯度下降算法](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E5%A4%9A%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95.png)<br>
 
 
