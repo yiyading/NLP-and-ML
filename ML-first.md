@@ -95,6 +95,7 @@ Cost Function的定义，是为了搞清楚如何把最有可能的直线与数�
 想象一下，你站在一个山顶，环顾360°，用小碎步尽快下山。每次小碎步都是寻找一个当前最快速的的下山方向，即当前斜率最大的方向下山。
 
 批量梯度下降（batch gradient descent）算法的公式为：
+
 ![批量梯度下降](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E6%89%B9%E9%87%8F%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D.png)
 其中α是学习率，阿尔法决定我们沿代价函数下降最大的地方迈多大的步。
 
