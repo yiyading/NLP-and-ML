@@ -10,7 +10,7 @@
 
 ## 1.二元分类
 假设使用线性回归算法解决一个分类问题，每个训练实例的y取值为0或1，但是使用线性回归算法得出的结果可能大于1或者小于零，这种算法无法很好拟合输入-输出，因此我们要使用逻辑回归算法
-![逻辑回归算法1]()
+![逻辑回归算法1](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%951.png)
 > 逻辑回归算法是分类算法，名字里的回归具有迷惑性，这种算法适合标签y有几个固定取值的情况<br>
 
 **总结**：二元分类本质上就是分类问题中，输出结果只可能有两种情况的分类问题，对于这种问题，线性回归无法很好的拟合
@@ -21,18 +21,18 @@
 > h<0.5, y=0<br>
 
 但假如有一个非常大size的肿瘤，将其作为实例加入训练集，就能获得一条新的直线
-![逻辑回归算法2]()
+![逻辑回归算法2](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%952.png)
 
 在上图种右边这条直线上，再使用0.5作为判断肿瘤是否恶性的阈值已经不合适
 
 我们引入一个新的模型：逻辑回归。该模型的输出变量的范围始终再[0, 1]之间。
 
 模型假设：
-![逻辑回归算法3]()
+![逻辑回归算法3](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%953.png)
 > X代表特征向量<br>
 > h -> g ，g代表逻辑函数，是一个常用的逻辑函数Sigmoid<br>
 > x = θ.T * X<br>
-![逻辑回归算法4]()
+![逻辑回归算法4](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%954.png)
 
 python实现：
 ```py
@@ -47,19 +47,19 @@ def sigmoid(z):
 
 ## 3.决策边界
 如下图，在逻辑回归种，经过sigmoid，输出函数被限定在[0,1]
-![逻辑回归算法5]()
+![逻辑回归算法5](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%955.png)
 
 我们假设一个模型，如果想要预测值y=1，则需要z>0
-![逻辑回归算法6]()
+![逻辑回归算法6](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%956.png)
 
 > 假设θ=[-3, 1, 1]，下图展示了z>0 和 z<0分别对应的输出y=1，y=0
-![逻辑回归算法7]()
+![逻辑回归算法7](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%957.png)
 
 **总结**：决策边界本质上就是画出使 θ.T\*X = 0这条直线（也可能使曲线），然后计算出y=1和y=0的概率。
 
 ## 4.代价函数
 在上边的讨论中，我们已经知道监督学习问题中的逻辑回归模型的拟合与线性回归模型的不同。<br>
-![逻辑回归算法8]()
+![逻辑回归算法8](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%958.png)
 
 如果我们将上图中的hθ(x)带入我们在**线性回归模型中定义的误差平方和代价函数**，则我们得到的损失函数将是一个非凸函数
 
