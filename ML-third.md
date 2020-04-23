@@ -43,16 +43,21 @@ def sigmoid(z):
 
 **重点解释**：h的作用是，对于给定的输入变量，根据选择的参数计算出输出变量=1的概率，即hθ(x) = P(y=1 | x;θ)
 
-若hθ(x) = 0.7，则表示有70%几率y=1，30%纪律y=0
+若hθ(x) = 0.7，则表示有70%几率y=1，30%几率y=0
 
 ## 3.决策边界
+**决策边界本质上就是分类线，线的两侧是不同类型的结果**
+
 如下图，在逻辑回归种，经过sigmoid，输出函数被限定在[0,1]
+
 ![逻辑回归算法5](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%955.png)
 
 我们假设一个模型，如果想要预测值y=1，则需要z>0
+
 ![逻辑回归算法6](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%956.png)
 
 > 假设θ=[-3, 1, 1]，下图展示了z>0 和 z<0分别对应的输出y=1，y=0<br>
+
 ![逻辑回归算法7](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%957.png)
 
 **总结**：决策边界本质上就是画出使 θ.T\*X = 0这条直线（也可能使曲线），然后计算出y=1和y=0的概率。
@@ -67,10 +72,12 @@ def sigmoid(z):
 > 非凸函数有很多局部最小值，影响梯度下降寻找全局最小值
 
 重新定义代价函数
+
 ![逻辑回归算法10](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%9510.png)
 > 这种构建Cost函数的特点是当y=1时，hθ(x)不为1时误差随着hθ(x)变小而变大；当y=0时则相反
 
 上边这种构造方法是将Cost分为两种情况来分别表述出来，我们将其简化，并代入代价函数：
+
 ![逻辑回归算法11](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E9%80%BB%E8%BE%91%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%9511.png)
 
 python代码实现代价函数:
