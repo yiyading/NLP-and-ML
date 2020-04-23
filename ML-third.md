@@ -141,3 +141,131 @@ def cost(theta, X, y):
 不同的分类器再经过训练集大量的训练之后，对测试集进行预测时，将所有分类机制都运行一遍，然后对每一个输入变量，取最高可能性的输出变量
 > 这里最高可能性就是hθ(x)最大所对应的类别
 
+```py
+#!/usr/bin/env python
+# coding:utf-8
+# author:yiyading
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# tensor对数据的形状非常挑剔
+plt.style.use('fivethirtyeight')    # 格式美化
+# plt.style.use('ggplot')           # 这两个参数对格式的优化差不多
+
+import matplotlib.pyplot as plt
+import tensorflow as tf
+from sklearn.metrics import classification_report  # 这个包是评价报告，显示主要分类指标的文本报告．在报告中显示每个类的精确度，召回率，F1值等信息。
+
+data = pd.read_csv('ex2data1.txt', names=['exam1', 'exam2', 'admitted'])
+print("data.head(): \n", data.head())  # 看前五行
+print("\ndata.describe(): \n", data.describe())  # 输出样本数量、平均值等参数
+
+# seaborn库是对matplotlib库更高级别的封装
+sns.set(context="notebook", style="darkgrid", palette=sns.color_palette("RdBu", 2))
+sns.lmplot('exam1', 'exam2', hue='admitted', data=data,
+           size=6,
+           fit_reg=False,
+           scatter_kws={"s": 50}
+           )
+plt.show()  # 输出数据，可视化
+
+
+def get_X(df):  # 读取特征
+    #     """
+    #     use concat to add intersect feature to avoid side effect
+    #     not efficient for big dataset though
+    #     """
+    # ones的作用是使X0=1，是为了梯度下降时更新θ0 -> https://github.com/yiyading/NLP-and-ML/blob/master/ML-second.md
+    ones = pd.DataFrame({'ones': np.ones(len(df))})  # ones是m行1列的dataframe
+    data = pd.concat([ones, df], axis=1)  # 合并数据，根据列合并
+    return data.iloc[:, :-1].as_matrix()  # 这个操作返回 ndarray,不是矩阵
+
+
+def get_y(df):  # 读取标签
+    #     '''assume the last column is the target'''
+    return np.array(df.iloc[:, -1])  # df.iloc[:, -1]
+
+
+def normalize_feature(df):
+    #     """Applies function along input axis(default 0) of DataFrame."""
+    return df.apply(lambda column: (column - column.mean()) / column.std())  # 对df进行特征缩放
+
+
+X = get_X(data)
+print("\nX.shape: ", X.shape)
+y = get_y(data)
+print("\ny.shape: ", y.shape)
+
+# 激活函数，常见的有sigmoid，relu，tanh，在搭建神经网络时，可以直接使用选择参数来选择
+def sigmoid(z):
+    return 1 / (1 + np.exp(-z))
+
+# 输出sigmoid函数
+fig, ax = plt.subplots(figsize=(8, 6))  # plt.subplots(1, 3, figsize=(8,6)) 产生一个1行3列8*6大小的子图
+ax.plot(np.arange(-10, 10, step=0.01),
+        sigmoid(np.arange(-10, 10, step=0.01)))
+ax.set_ylim((-0.1, 1.1))
+ax.set_xlabel('z', fontsize=18)
+ax.set_ylabel('g(z)', fontsize=18)
+ax.set_title('sigmoid function', fontsize=18)
+plt.show()
+
+theta = np.zeros(3) # X(m*n) so theta is n*1
+print("\ntheta: \n", theta)
+
+# 代价函数
+def cost(theta, X, y):
+    ''' cost fn is -l(theta) for you to minimize'''
+    return np.mean(-y * np.log(sigmoid(X @ theta)) - (1 - y) * np.log(1 - sigmoid(X @ theta)))
+# X @ theta与X.dot(theta)等价，表示矩阵相乘
+cost(theta, X, y)
+
+def gradient(theta, X, y):  # 批量梯度下降，这个函数实际上是计算梯度，而没有进行梯度更新，梯度下降在搭建神经网络时，通过参数进行选择
+#     '''just 1 batch gradient'''
+    return (1 / len(X)) * X.T @ (sigmoid(X @ theta) - y)
+gradient(theta, X, y)
+
+# 拟合参数
+import scipy.optimize as opt
+# minimize内部存在两个操作：1.计算各个变量的梯度。2.用梯度更新这些变量
+res = opt.minimize(fun=cost, x0=theta, args=(X, y), method='Newton-CG', jac=gradient)
+print("\nres: \n", res)
+
+# 用训练集预测和验证
+def predict(x, theta):
+    prob = sigmoid(x @ theta)
+    return (prob >= 0.5).astype(int)
+
+final_theta = res.x
+print("\nres.x: \n", res.x)
+y_pred = predict(X, final_theta)
+# classification_report()用于显示主要分类指标的文本报告．在报告中显示每个类的精确度，召回率，F1值等信息。
+print("\nclassification: \n", classification_report(y, y_pred))
+
+# 寻找决策边界
+print("\n final theta: \n", res.x) # this is final theta
+
+coef = -(res.x / res.x[2])  # find the equation
+print("\ncoef: \n",coef)
+
+x = np.arange(130, step=0.1)
+y = coef[0] + coef[1]*x
+
+print("\ndata.describe(): \n", data.describe())  # find the range of x and y
+
+# 绘制决策边界线
+sns.set(context="notebook", style="ticks", font_scale=1.5)
+sns.lmplot('exam1', 'exam2', hue='admitted', data=data,
+           size=6,
+           fit_reg=False,
+           scatter_kws={"s": 25}
+          )
+plt.plot(x, y, 'grey')
+plt.xlim(0, 130)
+plt.ylim(0, 130)
+plt.title('Decision Boundary')
+plt.show()
+```
