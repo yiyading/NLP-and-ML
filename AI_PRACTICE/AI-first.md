@@ -24,17 +24,12 @@ model = tf.keras.models.Sequential([网络结构])
 > activation: relu, softmax, sigmoid, tanh<br>
 > kernel_regularizer: tf.keras.regularizers.l1(), tf.keras.regularizersl2()
 
-> 卷积层：tf.keras.layers.Conv2D(filters = 输出维数, <br>
-   kernel_size= 卷积核尺寸,<br>
-   strides = 卷积步长,<br>
-   padding = " valid" or "same")<br>
+> 卷积层：tf.keras.layers.Conv2D(filters = 输出维数,kernel_size= 卷积核尺寸, strides = 卷积步长, padding = " valid" or "same")
 
 > LSTM层：tf.keras.layer.LSTM()
 
 ## 2. 反向传播选择
-model.compile(optimizer=优化器,<br>
-              loss=损失函数,<br>
-	      metrics=['损失函数'])<br>
+model.compile(optimizer=优化器,loss=损失函数, metrics=['损失函数'])<br>
 
 sgd是随机梯度下降，这些都是不同的梯度下降的方法，一个模型只能有一个optimizer
 > optimizer:<br>
@@ -56,8 +51,35 @@ metrics是一个列表，包含评价模型在训练和测试时的性能指标
 ## 3.设定训练测试集
 model.fit(训练集的数据,训练集的标签,batch_size= , epochs= , validation_split= 用作测试数据的比例, validation_data= (测试集的数据，测试集的标签), shuffle = True or False, validation_freq= 多少epoch测试一次)
 
-# 2.iris代码改写
+# 实例
+```py
+import tensorflow as tf
+from tensorflow.keras.layers import Dense, Flatten
+from tensorflow.keras import Model
 
-# 3.Mnist数据集
+mnist = tf.keras.datasets.fashion_mnist
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+x_train, x_test = x_train / 255.0, x_test /255.0
 
-# 4.实践训练MNIST数据集
+class MnistModel(Model):
+    def __init__(self):
+        super(MnistModel, self).__init__()
+        self.flatter = Flatten()
+        self.d1 = Dense(128, activation='relu')
+        self.d2 = Dense(10, activation='softmax')
+
+    def call(self, x):
+        x = self.flatter(x)
+        x = self.d1(x)
+        y = self.d2(x)
+        return y
+
+model = MnistModel()
+
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['sparse_categorical_accuracy'])
+
+model.fit(x_train, y_train, epochs=10, validation_data=(x_test, y_test), validation_freq=2)
+model.summary()
+```
