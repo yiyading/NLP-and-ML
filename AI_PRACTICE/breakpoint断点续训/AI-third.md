@@ -16,6 +16,16 @@ save_format：
 load_weights(路径文件名）
 ``` 
 
+提取可训练参数
+```py
+model.trainable_variables	# 模型中可训练的参数
+
+np.set_printoptions(precision=小数点后留几位,
+		    threshold=超过多少位省略)
+
+np.set_printoptions(threshold=np.inf)	# np.inf表示无穷大，
+```
+
 实例说明断点续训
 ```py
 #!/usr/bin/env python
@@ -26,7 +36,8 @@ import tensorflow as tf
 import os
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-
+# 设置显示模型参数的全部内容
+np.set_printoptions(threshild=np.inf)
 # 设置模型路径
 model_save_path = './checkpoint/mnist.tf'
 # 是否续训
@@ -46,16 +57,18 @@ model.compile(optimizer = 'adam',
               loss = 'sparse_categorical_crossentropy',
               metrics = ['sparse_categorical_accuracy'])
 
-# 回复模型
+# 恢复模型
 if load_pretrain_model:
     print('---------load the model----------')
     model.load_weights(model_save_path)
-
-
-model.summary()
 
 # 每10个epochs保存一次模型
 for i in range(50):
     model.fit(x_train, y_train, epochs=10, validation_data=(x_test, y_test), validation_freq=2)
     model.save_weights(model_save_path, save_format='tf')
+
+model.summary()
+
+# 打印模型参数
+print(model.trainable_variables)
 ```
