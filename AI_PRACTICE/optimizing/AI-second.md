@@ -26,10 +26,10 @@
 
 2. 计算t时刻一阶动量mt和二阶动量Vt
 
-3. 计算t时刻下降梯度
+3. 计算t时刻下降梯度<br>
 ![AI-second4](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second4.png)
 
-4. 计算t+1时刻的梯度w
+4. 计算t+1时刻的梯度w<br>
 ![AI-second5](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second5.png)
 
 
@@ -68,7 +68,7 @@
 # 3.Adadelta（自适应增量算法）
 **在SGD基础上增加二阶动量**
 
-Adagrad的学习率变化过于基金，可考虑不累计全部历史梯度，只关注指数滑动平均。即用一阶动量的定义方法，定义二阶动量
+Adagrad的学习率变化过于激进，可考虑不累计全部历史梯度，只关注指数滑动平均。即用一阶动量的定义方法，定义二阶动量
 
 优点：
 > 避免了二阶动量持续累积导致训练提前结束
