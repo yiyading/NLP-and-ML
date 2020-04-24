@@ -1,7 +1,7 @@
 # 优化器
 # 1.SGD（随机梯度下降）
 每次从训练集中随机选择一个batch来进行学习<br>
-![AI-second1]()
+![AI-second1](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second1.png)
 
 **SGD通过一阶动量和二阶动量计算出每次梯度的下降值，以此来实现随机梯度下降**
 
@@ -11,7 +11,7 @@
 > 3.对于非凸函数，易陷于局部极小值
 
 ## 一阶动量与二阶动量
-![AI-second2]()
+![AI-second2](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second2.png)
 
 一阶动量是各个时刻梯度方向的指数滑动平均值，是最近一段实践梯度和的平均值
 > β<1接近1，一般小于等于0.9
@@ -22,15 +22,15 @@
 待优化参数w，损失函数loss，初始学习率lr，每次迭代一个batch，t表示当前第几次batch迭代
 
 1. 计算t时刻损失函数关于当前参数的梯度<br>
-![AI-second3]()
+![AI-second3](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second3.png)
 
 2. 计算t时刻一阶动量mt和二阶动量Vt
 
 3. 计算t时刻下降梯度
-![AI-second4]()
+![AI-second4](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second4.png)
 
 4. 计算t+1时刻的梯度w
-![AI-second5]()
+![AI-second5](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second5.png)
 
 
 ## momentum
@@ -41,13 +41,13 @@
 上述情况，通过动量（momentum）便可以解决。
 
 > 无momentum的SGD没有动量的概念<br>
-> ![AI-second6]()
+> ![AI-second6](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second6.png)
 
 > 有momentum的SGD<br>
-> ![AI-second8]()
+> ![AI-second8](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second8.png)
 
 > 有无momentum的差别图<br>
-> ![AI-second9]()
+> ![AI-second9](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second9.png)
 # 2.Adagrad（自适应梯度算法）
 **在SGD基础上增加二阶动量**
 
@@ -63,7 +63,7 @@
 ## 优化器框架
 和SGD类似，但是**为了避免分母为零，在分母上加一个小的平滑项**<br>
 
-![AI-second7]()
+![AI-second7](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second7.png)
 
 # 3.Adadelta（自适应增量算法）
 **在SGD基础上增加二阶动量**
@@ -76,14 +76,14 @@ Adagrad的学习率变化过于基金，可考虑不累计全部历史梯度，�
 ## 优化器框架
 和SGD中动量定义方法不同
 
-![AI-second10]()
+![AI-second10](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second10.png)
 
 ## 4.Adam
 Momentum在SGD基础上增加一阶动量，即Momentum
 AdaGrad和Adadelta在SGD基础上增加二阶动量，Adaptive
 Adam把一阶动量和二阶动量结合起来，即融合Adaptive + Momentum。
 
-![AI-second11]()
+![AI-second11](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second11.png)
 
 Adam的python实现
 ```py
