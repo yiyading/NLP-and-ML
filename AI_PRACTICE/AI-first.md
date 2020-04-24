@@ -24,10 +24,10 @@ model = tf.keras.models.Sequential([网络结构])
 > activation: relu, softmax, sigmoid, tanh<br>
 > kernel_regularizer: tf.keras.regularizers.l1(), tf.keras.regularizersl2()
 
-> 卷积层：tf.keras.layers.Conv2D(filters = 输出维数, 
-				 kernel_size= 卷积核尺寸,
-				 strides = 卷积步长,
-				 padding = " valid" or "same")
+> 卷积层：tf.keras.layers.Conv2D(filters = 输出维数, <br>
+   kernel_size= 卷积核尺寸,<br>
+   strides = 卷积步长,<br>
+   padding = " valid" or "same")<br>
 
 > LSTM层：tf.keras.layer.LSTM()
 
@@ -54,9 +54,8 @@ metrics是一个列表，包含评价模型在训练和测试时的性能指标
 > accuracy=3/4
 
 ## 3.设定训练测试集
-model.fit(训练集的数据,训练集的标签,<br>
-	  batch_size= , epochs= ,<br>
-validation_split=用作测试数据的比例, validation_data=(测试集的数据，测试集的标签),shuffle = True or False, validation_freq= 多少epoch测试一次)
+model.fit(训练集的数据,训练集的标签,batch_size= , epochs= , validation_split= 用作测试数据的比例, validation_data= (测试集的数据，测试集的标签), shuffle = True or False, validation_freq= 多少epoch测试一次)
+
 # 2.iris代码改写
 
 # 3.Mnist数据集
