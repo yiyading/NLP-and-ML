@@ -1,5 +1,5 @@
 # 优化器
-# 1.SGD（随机梯度下降）
+# SGD（随机梯度下降）
 每次从训练集中随机选择一个batch来进行学习<br>
 ![AI-second1](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second1.png)
 
@@ -10,30 +10,28 @@
 > 2.对所有参数更新时应用同样的学习率，对于稀疏数据，理想情况使对出现频率低的特征进行较大更新<br>
 > 3.对于非凸函数，易陷于局部极小值
 
-## 一阶动量与二阶动量
+一阶动量与二阶动量
 ![AI-second2](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second2.png)
 
-一阶动量是各个时刻梯度方向的指数滑动平均值，是最近一段实践梯度和的平均值
-> β<1接近1，一般小于等于0.9
+* 一阶动量是各个时刻梯度方向的指数滑动平均值，是最近一段实践梯度和的平均值；β<1接近1，一般小于等于0.9
+* 二阶动量为之前所有梯度的平方和
 
-二阶动量为之前所有梯度的平方和
-
-## 优化器框架
-待优化参数w，损失函数loss，初始学习率lr，每次迭代一个batch，t表示当前第几次batch迭代
-
-1. 计算t时刻损失函数关于当前参数的梯度<br>
-![AI-second3](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second3.png)
-
-2. 计算t时刻一阶动量mt和二阶动量Vt
-
-3. 计算t时刻下降梯度<br>
-![AI-second4](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second4.png)
-
-4. 计算t+1时刻的梯度w<br>
-![AI-second5](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second5.png)
+优化器框架
+> 待优化参数w，损失函数loss，初始学习率lr，每次迭代一个batch，t表示当前第几次batch迭代
+> <br>
+> 1. 计算t时刻损失函数关于当前参数的梯度<br>
+> ![AI-second3](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second3.png)<br>
+> <br>
+> 2. 计算t时刻一阶动量mt和二阶动量Vt<br>
+> <br>
+> 3. 计算t时刻下降梯度<br>
+> ![AI-second4](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second4.png)<br>
+> <br>
+> 4. 计算t+1时刻的梯度w<br>
+> ![AI-second5](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second5.png)
 
 
-## momentum
+## 1.momentum
 **在SGD的基础上增加一阶动量**
 
 在等高线的某些区域（某些方向教另一些方向上陡峭的多，常见于局部极值点），SGD会在这些地方附近震荡，从而导致收敛速度慢。
@@ -60,10 +58,10 @@
 > 仍需要手动设置全局学习率<br>
 > 分母不断积累，导致学习率收缩，最终迫使训练提前结束
 
-## 优化器框架
-和SGD类似，但是**为了避免分母为零，在分母上加一个小的平滑项**<br>
-
-![AI-second7](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second7.png)
+优化器框架
+> 和SGD类似，但是**为了避免分母为零，在分母上加一个小的平滑项**<br>
+> <br>
+> ![AI-second7](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second7.png)
 
 # 3.Adadelta（自适应增量算法）
 **在SGD基础上增加二阶动量**
@@ -73,15 +71,15 @@ Adagrad的学习率变化过于激进，可考虑不累计全部历史梯度，�
 优点：
 > 避免了二阶动量持续累积导致训练提前结束
 
-## 优化器框架
-和SGD中动量定义方法不同
-
-![AI-second10](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second10.png)
+优化器框架
+> 和SGD中动量定义方法不同，使用一阶的方法定义二阶<br>
+> <br>
+> ![AI-second10](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second10.png)
 
 ## 4.Adam
-Momentum在SGD基础上增加一阶动量，即Momentum
-AdaGrad和Adadelta在SGD基础上增加二阶动量，Adaptive
-Adam把一阶动量和二阶动量结合起来，即融合Adaptive + Momentum。
+Momentum在SGD基础上增加一阶动量，即Momentum<br>
+AdaGrad和Adadelta在SGD基础上增加二阶动量，Adaptive<br>
+Adam把一阶动量和二阶动量结合起来，即融合Adaptive + Momentum。<br>
 
 ![AI-second11](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second11.png)
 
