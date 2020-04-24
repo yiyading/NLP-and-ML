@@ -3,7 +3,6 @@
 > 正则化的目的是为了解决overfitting
 
 1. L1正则化是通过稀疏参数（减少参数的数量）来降低复杂度
-
 2. L2正则化通过使参数接近零但不为零来降低复杂度。在梯度下降时，加大对θj的惩罚
 
-
+![ML-fourth1](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fourth1.png)
