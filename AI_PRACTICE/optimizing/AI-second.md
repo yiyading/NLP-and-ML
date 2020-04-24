@@ -1,4 +1,8 @@
 # 优化器
+两种常见的损失函数
+1. 均方差损失函数mse：MSE(y,y_) = ∑(y-y_)\*\*2 / n
+2. 交叉熵损失函数ce：表征两个概率分布之间的举例，计算出的H值越小，预测越准；H(y_,y)=∑[y_ \* log(y)]
+
 # SGD（随机梯度下降）
 每次从训练集中随机选择一个batch来进行学习<br>
 ![AI-second1](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second1.png)
