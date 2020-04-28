@@ -71,7 +71,7 @@ LR和NN正则化均不对θ0和bias进行处理。
 ![ML-fifth12](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith12.png)
 
 利用这一误差计算前一层误差:<br>
-> 其中g'是sigmoid函数的导数，点乘前边的那一项是权值导致的误差的和)
+> 其中g'是sigmoid函数的导数，点乘前边的那一项是权值导致的误差的和<br>
 ![ML-fifth13](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith13.png)
 
 当计算过所有误差之后，我们可以计算代价函数的偏导数，假设不使用正则化进行偏导数计算:<br>
@@ -80,7 +80,7 @@ LR和NN正则化均不对θ0和bias进行处理。
 简单的理解上边式子中i，j的含义：在全连接前向传播中，每一层的任意一个神经元对下一层的所有神经元都有贡献，每个贡献的所占的weight就是我们需要更新的θ参数。
 
 如果考虑正则化，且训练集是一个特征矩阵而非向量，我们需要计算每一层的误差单元将构成一个矩阵，使用如下算法可计算误差单元：<br>
-> 三角形那个特殊符号表示误差单元
+> 三角形那个特殊符号表示误差单元<br>
 ![ML-fifth15](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith15.png)
 
 当计算完误差单元，我们便可以利用以下算法计算代价函数偏导数:<br>
