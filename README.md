@@ -12,3 +12,5 @@
 
 曹健老师mooc:
 > https://www.icourse163.org/learn/PKU-1002536002#/learn/announce
+
+[ML-fifth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-fifth.md)主要介绍NN网络的构成以及NN网络中如何使用梯度下降和梯度检验的作用
