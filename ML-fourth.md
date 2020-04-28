@@ -11,13 +11,13 @@
 ## 1.代价函数
 L2正则化对θ的惩罚是在代价函数中体现的。
 
-![ML-fourth3]()<br>
-![ML-fourth2]()<br>
+![ML-fourth3](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fourth3.png)<br>
+![ML-fourth2](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fourth2.png)<br>
 
 λ又称为正则化参数（regularization parameter），第一个式子中确定θ3和θ4所对应的特征造成了overfiting，对其参数进行惩罚，第二个式子无法确定哪个特征造成正则化，惩罚所有参数。
 
 经过正则化处理的模型与原模型可能的对比如下：<br>
-![ML-fourth4]()
+![ML-fourth4](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fourth4.png)
 
 正则化参数λ如果选择的过大，会把所有参数最小化，导致模型hθ(x)=θ0，也就是上图中红线所示情况，造成欠拟合。
 
@@ -30,17 +30,17 @@ L2正则化对θ的惩罚是在代价函数中体现的。
 
 下边是线性回归和逻辑回归的J(θ)对比图
 > 线性回归<br>
-> ![ML_fourth5]()
+> ![ML_fourth5](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fourth5.png)
 
 > 使用sigmoid的逻辑回归，在[ML-third](https://github.com/yiyading/NLP-and-ML/blob/master/ML-third.md)有关于损失函数的重定义<br>
-> ![ML-fourth6]()
+> ![ML-fourth6](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fourth6.png)
 
 使用以上两个式子显示的损失函数J(θ)进行参数迭代（梯度下降）
 > 线性回归<br>
-> ![ML-fourth7]()
+> ![ML-fourth7](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fourth7.png)
 
 > 逻辑回归<br>
-> ![ML-fourth7]()
+> ![ML-fourth7](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fourth7.png)
 
 逻辑回归看上去和线性回归有些一样，但是其中的h经过了sigmoid过程
 
