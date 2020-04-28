@@ -8,14 +8,14 @@
 
 多个卷积核可实现对同一输入层多次特征提取，卷积核个数决定输出层channel数。
 > 如图使用6个卷积核，对输入层进行两次特征提取，output层channel数为2.<br>
-> ![CNN1]()
+> ![CNN1](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/img/CNN1.png)
 
 **感受野**：卷积神经网络各输出层每个像素点在原始图像上的映射区域大小。
-![CNN2]()
+![CNN2](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/img/CNN2.png)
 
 **输出特征尺寸计算**：输出图片边长=（输入图片边长 - 卷积核长 + 1） / 步长<br>
 此图的输出图片边长 = (5-3+1)/1 = 3
-![CNN3]()
+![CNN3](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/img/CNN3.png)
 
 **全零填充（padding）**：在输入层周围填上一圈零。<br>
 在Tensor中
@@ -50,18 +50,18 @@ model = tf.keras.models.Sequential([
 **批归一化（Batch Normalization，BN）**：对一小批数据在网络各层进行归一化处理。<br>
 
 将每层的数据输入减去其均值再除以标准差：<br>
-![CNN4]()
+![CNN4](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/img/CNN4.png)
 
 上式中各参数的含义如下：<br>
-![CNN5]()
+![CNN5](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/img/CNN5.png)
 
 在激活函数中，当数值超过一定的范围，激活函数图像的斜率为0，梯度消失。BN的作用是把每一层的输入调整到均值0，方差为1的标准正态分布，解决梯度消失。
 
 对于sigmoid函数，BN会造成激活函数在[-2,2]区间内近似线性函数，深层网络能力下降：<br>
-![CNN6]()
+![CNN6](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/img/CNN6.png)
 
 解决办法是给每个卷积核引入可训练参数γ核β，调整BN的力度。
-![CNN7]()
+![CNN7](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/img/CNN7.png)
 
 输入特征与卷积核乘加计算 -> BN -> 激活层
 
