@@ -10,7 +10,7 @@
 除输入层外，每一层的逻辑单元按照不同权重（weight）接受从前一层逻辑单元传入的特征，经过激活单元（激活函数）后输出为下一层的输入。
 
 下图展示一个3层神经网络:<br>
-<div align=center>![ML-fifth1](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith1.png)<br>
+<div align=center>![ML-fifth1](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith1.png)</br>
 
 <center>![ML-fifth3](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith3.png)</center>
 
