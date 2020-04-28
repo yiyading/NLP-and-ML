@@ -84,7 +84,7 @@ LR和NN正则化均不对θ0和bias进行处理。
 ![ML-fifth15](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith15.png)
 
 当计算完误差单元，我们便可以利用以下算法计算代价函数偏导数:<br>
-![ML-fifth16](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith17.png)
+![ML-fifth16](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith16.png)
 
 最后进行梯度下降。
 
