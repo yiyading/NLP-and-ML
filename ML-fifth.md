@@ -22,6 +22,7 @@ a表示激活单元的输出，θ表示前层到后层映射的权重矩阵，�
 
 把x，θ，a分别用矩阵表示：<br>
 ![ML-fifth2](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith2.png)
+> a=θ*X
 
 神经网络和普通的逻辑回归类似，逻辑回归使用的是原始特征，而神经网络使用的是“进化”后的特征，如果只看最后一层hidden layer和output layer，神经网络和logistic Regression是相同的
 
@@ -43,15 +44,15 @@ a表示激活单元的输出，θ表示前层到后层映射的权重矩阵，�
 > <br><br>
 > K类分类：SL=K，yi=1表示分到第i类（K > 2）
 
-上述假设如下图所示：
+上述假设如下图所示：<br>
 ![ML-fifth8](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith8.png)
 
 使用梯度下降的方法进行反向传播需要使用代价函数，logistic Regression和二分类NN的代价函数相同，但K分类NN的代价函数需要计算K个损失值，也就是K个输出的损失求和。
 
-LR：
+LR：<br>
 ![ML-fifth9](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith9.png)
 
-K分类的NN
+K分类的NN: <br>
 ![ML-fifth10](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith10.png)
 
 上述两个损失函数都是使用了L2正则化。在K分类的NN中，正则化计算的是每一层中所有weight的平方和的叠加。
@@ -66,10 +67,10 @@ LR和NN正则化均不对θ0和bias进行处理。
 误差是激活单元与实际值之间的误差，我们假设一个四层神经网络前向传播如下：
 ![ML-fifth11](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith11.png)
 
-计算最后一层的误差
+计算最后一层的误差<br>
 ![ML-fifth12](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith12.png)
 
-利用这一误差计算前一层误差，其中g'是sigmoid函数的导数，点乘前边的那一项是权值导致的误差的和
+利用这一误差计算前一层误差，其中g'是sigmoid函数的导数，点乘前边的那一项是权值导致的误差的和<br>
 ![ML-fifth13](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-fifith13.png)
 
 当计算过所有误差之后，我们可以计算代价函数的偏导数，假设不使用正则化进行偏导数计算
