@@ -60,7 +60,7 @@ model = tf.keras.models.Sequential([
 对于sigmoid函数，BN会造成激活函数在[-2,2]区间内近似线性函数，深层网络能力下降：<br>
 ![CNN6](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/img/CNN6.png)
 
-解决办法是给每个卷积核引入可训练参数γ核β，调整BN的力度。
+解决办法是给每个卷积核引入可训练参数γ核β，调整BN的力度。<br>
 ![CNN7](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/img/CNN7.png)
 
 输入特征与卷积核乘加计算 -> BN -> 激活层
