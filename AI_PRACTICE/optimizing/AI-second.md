@@ -1,7 +1,7 @@
 # 优化器
 两种常见的损失函数
 1. 均方差损失函数mse：MSE(y,y_) = ∑(y-y_)\*\*2 / n
-2. 交叉熵损失函数ce：表征两个概率分布之间的举例，计算出的H值越小，预测越准；H(y_,y)=∑[y_ \* log(y)]
+2. 交叉熵损失函数ce：表征两个概率分布之间的距离，计算出的H值越小，预测越准；H(y_,y)=∑[y_ \* log(y)]
 
 # SGD（随机梯度下降）
 每次从训练集中随机选择一个batch来进行学习<br>
@@ -11,10 +11,10 @@
 
 缺点：
 > 1.学习率难确定<br>
-> 2.对所有参数更新时应用同样的学习率，对于稀疏数据，理想情况使对出现频率低的特征进行较大更新<br>
+> 2.对所有参数更新时应用同样的学习率，对于稀疏数据，理想情况是对出现频率低的特征进行较大更新<br>
 > 3.对于非凸函数，易陷于局部极小值
 
-一阶动量与二阶动量
+一阶动量与二阶动量<br>
 ![AI-second2](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second2.png)
 
 * 一阶动量是各个时刻梯度方向的指数滑动平均值，是最近一段实践梯度和的平均值；β<1接近1，一般小于等于0.9
@@ -25,12 +25,9 @@
 > <br>
 > 1. 计算t时刻损失函数关于当前参数的梯度<br>
 > ![AI-second3](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second3.png)<br>
-> <br>
 > 2. 计算t时刻一阶动量mt和二阶动量Vt<br>
-> <br>
 > 3. 计算t时刻下降梯度<br>
 > ![AI-second4](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second4.png)<br>
-> <br>
 > 4. 计算t+1时刻的梯度w<br>
 > ![AI-second5](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/optimizing/img/AI-second5.png)
 
@@ -53,7 +50,7 @@
 # 2.Adagrad（自适应梯度算法）
 **在SGD基础上增加二阶动量**
 
-引入二阶动量，对每个参数分配自适应学习速率，对**低频参数更新大，对高频参数跟新小**，较SGD有更高的鲁棒性
+引入二阶动量，对每个参数分配自适应学习速率，对**低频参数更新大，对高频参数更新小**，较SGD有更高的鲁棒性
 
 优点：
 > 减少学习率的手动调节
