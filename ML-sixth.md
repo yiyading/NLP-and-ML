@@ -24,17 +24,17 @@
 
 如下图所示，假设我们要在10个不同次数的二项式模型之间进行选择，使用train集选出这10个模型中代价函数J最小的一个模型，然后将该模型应用于test集。
 
-![ML-sixth1]()
+![ML-sixth1](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-sixth1.png)
 
 对于不同的回归模型，我们用test集计算代价函数的方法有些区别。
 
 对于线性回归模型，我们利用test集计算代价函数：
 
-![ML-sixth2]()
+![ML-sixth2](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-sixth2.png)
 
 对于逻辑回归模型，我们除了可以利用test集计算代价函数，还可以应用误分类比率，对于每个test集实例，计算所有误分类，然后对结果求平均值：
 
-![ML-sixth3]()
+![ML-sixth3](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-sixth3.png)
 
 通过test集计算出来的J可以判断模型的好坏。
 
@@ -53,12 +53,12 @@ train：cross_validation：test = 6:2:2
 3. 用第2步得出的模型对test集进行计算得出推广误差(J)。
 
 计算这3个数据集的方法类似，如下图所示：
-![ML-sixth4]()
+![ML-sixth4](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-sixth4.png)
 
 ## 3.偏差（bias）和方差（variance）
 当运行一个算法时，如果这个算法的效果不好，那这个模型大概率会出现的问题是**偏差大**或者**方差大**，也就是欠拟合和过拟合。
 
-![ML-sixth5]()
+![ML-sixth5](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-sixth5.png)
 
 下图将train集和cross_validation集的损失函数与多项式的次数绘制在同一张图表上。结合上图分析
 > 当特征选取的较少时，无论怎么优化，train集和cross_validation集的J都很高，模型处于underfit状态，high bias。<br>
@@ -67,35 +67,35 @@ train：cross_validation：test = 6:2:2
 > <br>
 > 当特征选取适中时，train集和cross_validation集的J都很小。
 
-![ML-sixth6]()
+![ML-sixth6](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-sixth6.png)
 
 bias描述的是样本拟合出的模型的输出效果与真实效果的差距。
 
 variance描述的是train集上拟合出的模型在测试集上的表现。
 
-![ML-sixth7]()
+![ML-sixth7](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-sixth7.png)
 
 ## 4.正则化和bias/variance
 在训练模型时，我们一般使用正则化的方法来防止过拟合，但是如果正则化程度太高或者太小，也会造成过拟合/欠拟合问题。
 
-![ML-sixth8]()
+![ML-sixth8](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-sixth8.png)
 
 如上图所示，如果正则化程度过高，会对除θ0之外所有的参数进行过大的惩罚，造成underfit情况；如果正则化程度过低，会对所有参数惩罚过小，造成overfit情况。
 
 下图将train集和cross_validation集的损失函数与正则化参数λ绘制在同一张表上。
 
-![ML-sixth9]()
+![ML-sixth9](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-sixth9.png)
 
 ## 5.学习曲线
 通过学习曲线，我们能判断出一个学习算法是处于**high variance/overfit**还是处于**high bias/underfit**状态。
 
 如下图所示，当处于**high bias/underfit**的状态下，无论如何增加数据量都无法train集和cross_validation的J会在一个较高的线上下而不会下降。
 
-![ML-sixth10]()
+![ML-sixth10](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-sixth10.png)
 
 如下图所示，当处于**high variance/overfit**状态下，增加数据量，train集的J会增高，但是其增高幅度小于cross_validation集的J的下降幅度。
 
-![ML-sixth11]()
+![ML-sixth11](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-sixth11.png)
 
 * 通过学习曲线中train和cv的J的变化程度，来判断模型处于什么状态。
 
@@ -118,7 +118,7 @@ variance描述的是train集上拟合出的模型在测试集上的表现。
 
 通常选择较大的神经网络并采用正则化比采用较小的神经网络的效果要好。
 
-![ML-sxit12]()
+![ML-sxit12](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-sixth12.png)
 
 对于神经网络的隐藏层的层数选择，通常从一层开始逐渐增加层数。
 
