@@ -14,3 +14,5 @@
 > https://www.icourse163.org/learn/PKU-1002536002#/learn/announce
 
 [ML-fifth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-fifth.md)主要介绍NN网络的构成以及NN网络中如何使用梯度下降和梯度检验的作用
+
+[ML-sixth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-sixth.md)主要介绍对模型出现bias/variance问题时的优化方法，以及何时选择这些优化方法
