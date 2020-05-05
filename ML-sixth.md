@@ -53,6 +53,7 @@ train：cross_validation：test = 6:2:2
 3. 用第2步得出的模型对test集进行计算得出推广误差(J)。
 
 计算这3个数据集的方法类似，如下图所示：
+
 ![ML-sixth4](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/ML-sixth4.png)
 
 ## 3.偏差（bias）和方差（variance）
