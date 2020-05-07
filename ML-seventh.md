@@ -72,7 +72,7 @@ spam（垃圾邮件）分类算法是监督学习的算法，我们选取一个�
 
 上边我们提到的所有预测为良性的算法，其Recall=0。
 
-![ML-seventh1]()
+![ML-seventh1](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh1.png)
 
 ## 3.查准率和查全率之间的权衡
 在上面我们提到Precision和Recall作为类偏斜问题的评估度量值。这两个概念的度量方向不同，但在实际问题中，我们通常希望Recaall和Precision相对平衡。
@@ -81,7 +81,7 @@ spam（垃圾邮件）分类算法是监督学习的算法，我们选取一个�
 
 假设我们算法的结果在0-1之间，我们设置阈值为0.5来判断真假。
 
-![ML-seventh2]()
+![ML-seventh2](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh2.png)
 
 如果我们只希望在非常确信的情况下预测为真（恶性肿瘤），那么我们需要非常高的Precision，我们提高阈值，可以将其设置为0.7、0.9。
 
@@ -89,10 +89,10 @@ spam（垃圾邮件）分类算法是监督学习的算法，我们选取一个�
 
 不同阈值情况下，Recall和Precission的关系如下图所示：
 
-![ML-seventh3]()
+![ML-seventh3](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh3.png)
 
 > **我们希望一种方法能帮助我们选择这个阈值（threshold）**。一种方法是计算F1值（F1 Score），其计算公式为：
-> > ![ML-seventh4]()
+> > ![ML-seventh4](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh4.png)
 > 我们选择使F1值最高的阈值
 
 ## 4.数据的重要性
@@ -101,7 +101,7 @@ spam（垃圾邮件）分类算法是监督学习的算法，我们选取一个�
 
 下图展示了四个不同的算法在不同数据量下的准确率。
 
-![ML-seventh5]()
+![ML-seventh5](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh5.png)
 
 # 二、支持向量机（SVM）
 在机器学习中，不同算法的性能不同。
@@ -114,7 +114,7 @@ SVM在学习复杂的非线性方程式提供了一种更加清晰，更加强�
 
 ## 1.优化目标
 
-![ML-seventh6]()
+![ML-seventh6](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh6.png)
 
 如上图所示。在逻辑回归中我们已经非常熟悉这种假设函数的形式和右边的S型激活函数，我们使用z来代替θ.T\*x。
 
@@ -122,7 +122,7 @@ SVM在学习复杂的非线性方程式提供了一种更加清晰，更加强�
 
 如果有一个y=1的样本，我们希望h趋近于1。因此我们如果想正确的分类此样本，需要z远大于0，此时在上图中不难发现逻辑回归的输出将趋近于1；同理，当z远小于0时，h趋近于0，即逻辑回归的输出趋近于0。
 
-![ML-seventh7]()
+![ML-seventh7](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh7.png)
 
 上图逻辑回归中的代价函数，我们先忽略1/m这一项。从这个代价函数中，我们能看到每一个样本(x,y)都会对总代价函数做出贡献。
 
@@ -135,17 +135,17 @@ SVM在学习复杂的非线性方程式提供了一种更加清晰，更加强�
 **1. 构造新的代价函数cost1(z)和cost0(z)**
 在下图中，我们对逻辑回归中的代价函数分成了两种情况来讨论。
 
-![ML-seventh8]()
+![ML-seventh8](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh8.png)
 
 上图是代价函数中y=1的情况，此时的-log函数随着z增大而减小，我们以1为界限将其转化为一条水平线和一条直线，构造成新的代价函数cost1(z)。
 
 同理下图为代价函数中y=0的情况。构造新的代价函数cost0(z).
 
-![ML-seventh9]()
+![ML-seventh9](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh9.png)
 
 上面这两个代价函数中下标1和0分别表示y=1和y=0的情况。
 
-![ML-seventh10]()
+![ML-seventh10](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh10.png)
 
 我们在逻辑回归中使用代价函数J(θ)，上图将代价函数的负号被放到了方程内部。对于向量机而言，实质上我们要将这些log函数替换为cost1(z)和cost0(z)，也就是cost1(θ.T*x)和cost0(θ.T*x)。
 
@@ -159,7 +159,7 @@ SVM在学习复杂的非线性方程式提供了一种更加清晰，更加强�
 
 因此就得到了支持向量机（SVM）中整个优化目标函数。如下图所示：
 
-![ML-seventh11]()
+![ML-seventh11](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh11.png)
 
 **有别于逻辑回归输出的是概率。在SVM中，我们最小化后的代价函数h获得的参数θ，SVM来所作的是它来直接预测y=1或者y=0**。因此当θ.T\*x大于等于0时，会直接预测y=1。这就是SVM数学上的意义。
 
@@ -167,7 +167,7 @@ SVM在学习复杂的非线性方程式提供了一种更加清晰，更加强�
 人们有时将SVM看作大间距分类器。即**用最大间距将样本分离开来**。
 > 这一节只从图像上说明SVM被看作大间距分类器的原因。下一节会从数学原理上分析原因。
 
-![ML-seventh12]()
+![ML-seventh12](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh12.png)
 
 上图是SVM模型的代价函数，左边cost1(z)用于正样本，右边cost2(z)用于负样本。
 
@@ -183,7 +183,7 @@ SVM在学习复杂的非线性方程式提供了一种更加清晰，更加强�
 
 下图是SVM的优化函数：
 
-![ML-seventh13]()
+![ML-seventh13](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh13.png)
 
 当我们输入一个训练样本标签y=1，你想令第一项为0，则需要找到一个θ，使的θ.T*x >= 1。
 
@@ -191,13 +191,13 @@ SVM在学习复杂的非线性方程式提供了一种更加清晰，更加强�
 
 当第一项为0时，可以得到决策边界，如下图：
 
-![ML-seventh14]()
+![ML-seventh14](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh14.png)
 
 具体而言，如果有这样一个数据集，其中有正样本和负样本，可以清晰的看出来这个数据集是可分的。即存在直线将正负样本分开。
 
 如下如所示，黄色和粉色的线分别代表一种决策边界，但我们可以看出黑色的线所代表的决策边界有更大的最短距离，这两条额外的蓝色线就表示黑色线决策边界与训练样本的最短距离。
 
-![ML-seventh15]()
+![ML-seventh15](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh15.png)
 
 > 这个间距叫做支持向量机的间距，而这正是支持向量机有鲁棒性的原因。
 
@@ -207,13 +207,13 @@ SVM在学习复杂的非线性方程式提供了一种更加清晰，更加强�
 
 在代价函数最小化的过程中，我们希望找出在y=1和y=0两种情况下都使得代价函数中左边这一项尽量为0的参数，因此我们的最小化问题就发生了转变，如下图：
 
-![ML-seventh16]()
+![ML-seventh16](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh16.png)
 
 > 熟悉这个限制条件，这个限制条件在下一节的数学推到中非常重要。
 
 事实上，支持向量机现在要比这个大间距分类器所体现的更成熟，尤其在使用大间距分类器时，学习算法会受到异常点的影响。比如加入一个额外的正样本，如下图所示：
 
-![ML-seventh17]()
+![ML-seventh17](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh17.png)
 
 因为加入了一个额外的样本，为了将样本用最大间距区分开，我们会得到类似粉色线的决策边界。仅仅是这样一个样本，就将决策边界从黑色的线变成粉色的线是不明智的。
 
@@ -235,18 +235,18 @@ C的作用类似于1/λ，λ是我们之前使用过的正则化参数，这只�
 
 在上一节我们提到如果想要的到SVM的决策边界，要符合下图所示的条件：
 
-![ML-seventh18]()
+![ML-seventh18](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh18.png)
 
 为了简化计算，我们假设只有2个特征，并且θ0=0(忽略截距)。||u||是y的范数，表示u 的长度。
 
-![ML-seventh19]()
+![ML-seventh19](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh19.png)
 
 > 内积知识如果不太会，直接百度即可，这是线代里面比较基础的内容。
 如上图，当满足限制条件时，前项为零，只求最后一项θ平方的叠加和的最小值即可。当只有两个特征时，其平方和等于θ向量的范数||θ||^2。因此SVM做的全部事情就是**极小化参数向量θ范数的平方，或者说是长度的平方**。
 
 做一下内积转换，下图中||θ||是参数θ的长度，p是x在θ向量的投影（上图有所展示）：
 
-![ML-seventh20]()
+![ML-seventh20](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh20.png)
 > 在这张图中可以清晰的看到，我们的优化目标函数可以被写成=(1/2)\*||θ||^2。
 
 ## 4.SVM如何选择决策边界
@@ -254,7 +254,7 @@ C的作用类似于1/λ，λ是我们之前使用过的正则化参数，这只�
 
 θ0=0仅仅意味着决策边界必须通过远点(0,0)。
 
-![ML-seventh21]()
+![ML-seventh21](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh21.png)
 
 上图中绿色的线表示一条决策边界，此时参数向量θ与其正交。
 > 为什么参数向量θ和决策边界要正交？<br>
@@ -268,7 +268,7 @@ C的作用类似于1/λ，λ是我们之前使用过的正则化参数，这只�
 
 相反的，如果SVM选择了下边这个决策边界
 
-![ML-seventh22]()
+![ML-seventh22](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh22.png)
 
 在这种条件下，样本x在θ向量方向的投影p变大，在满足限制条件的前提下，||θ||就会变小。这条决策边界极小化||θ||平方和的效果比上边那条决策边界要好。
 
@@ -277,7 +277,7 @@ C的作用类似于1/λ，λ是我们之前使用过的正则化参数，这只�
 ## 5.核函数
 当我们解决无法用直线进行分割的分类问题时，我们需要使用次数更高的函数来分割模型。
 
-![ML-seventh23]()
+![ML-seventh23](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh23.png)
 
 在上图的描述中，我们对高阶模型中的特征进行了变换：
 > hθ(x) = 1 , if θ0+θ1x1+θ2x2+... >= 0<br>
@@ -289,27 +289,27 @@ C的作用类似于1/λ，λ是我们之前使用过的正则化参数，这只�
 
 除了对原有特征进行组合外，我们还可以利用核函数计算出新的特征f1,f2,f3...
 
-![ML-seventh24]()
+![ML-seventh24](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh24.png)
 
 这里面用到了**高斯核函数**，虽然看上去和正态分布很像，但实际上和正态分布没什么实际关系。
 
 高斯核函数的假设如下：
 
-![ML-seventh25]()
+![ML-seventh25](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh25.png)
 
 其中范数为实例x与地标(landmarks)之间的距离的平方：
 
-![ML-seventh26]()
+![ML-seventh26](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh26.png)
 > 如果一个训练实例x与地标l之间的距离近似于0，则新特征f=exp(-0)约等于1。<br>
 > 如果一个训练实例x与地标l之间的举例较远，则新特征f=exp(||large num||^2)约等于0。
 
 我们假设训练实例含有两个特征[x1, x2]，给定地标l(1)与不同的σ值，见下图：
 
-![ML-seventh27]()
+![ML-seventh27](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh27.png)
 
 图中水平坐标为x1,x2，垂直坐标代表f。可以看出，只有当x与l(1)重合时，f才是最大值1。随着x的改变，f值改变的速率受到σ值的控制。
 
-![ML-seventh28]()
+![ML-seventh28](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh28.png)
 
 在上图中红线内部预测y=1，红线外预测y=0。
 
@@ -322,22 +322,22 @@ C的作用类似于1/λ，λ是我们之前使用过的正则化参数，这只�
 
 根据训练集数量来选，如果有m个实例，则我们选取m个地标，并令x(i)=l(i)（i表示第几个实例和地标）<br>
 
-![ML-seventh29]()
+![ML-seventh29](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh29.png)
 
 如下图，在计算θ\*f时，需要用x与所有landmarks进行计算，计算出f(i)，然后累加。
 
-![ML-seventh30]()
+![ML-seventh30](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh30.png)
 
 将高斯核函数运用到SVM中，修改SVM的假设：
 
 * 给定x，计算新特征f，当θ.T\*f >= 0时，预测y=1，否则反之。相应的修改代价函数为：
 
-![ML-seventh31]()
+![ML-seventh31](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh31.png)
 > 注意上面单价函数与SVM中不同点在于cost函数内部的参数发生了变化，即特征的选择发生了变化。
 
 上式中的正则化项可以进行如下的转换，目的时为了适应不同的核函数。
 
-![ML-seventh32]()
+![ML-seventh32](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML2/ML-seventh32.png)
 
 在上边这个转化中，我们用θ.T\*M\*θ来代替θ.T\*θ，这里的M是根据选择的核函数不同而不同的一个矩阵，这么做的原因是为了简化计算。
 
