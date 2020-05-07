@@ -16,3 +16,12 @@
 [ML-fifth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-fifth.md)主要介绍NN网络的构成以及NN网络中如何使用梯度下降和梯度检验的作用
 
 [ML-sixth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-sixth.md)主要介绍对模型出现bias/variance问题时的优化方法，以及何时选择这些优化方法
+
+[ML-seventh](https://github.com/yiyading/NLP-and-ML/blob/master/ML-seventh.md)：
+> 1. 通过描述搭建垃圾邮件分类器的原理，来说明误差分析（error analysis）的优缺点。
+> 2. 通过类偏斜问题查准率和查全率的概念，并引出**F1 score**作为权衡阈值的标准。
+> 3. 通过对逻辑回归代价函数的修改，构建SVM；通过将正则化参数λ修改为C得到SVM的代价函数。
+> 4. 通过作图说明SVM为什么被叫做大间距分类器，即嵌入安全间距因子的作用——鲁棒性。
+> 5. 通过数学分析说明SVM如何选择决策边界。即在满足限制条件的前提下，极小化代价函数。
+> 6. 通过核函数得到非线性决策边界，并介绍高斯核函数的similarity的实现。
+> 7. 介绍如何使用SVM，在不同的情况下如何选择SVM和逻辑回归。
