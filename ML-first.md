@@ -123,10 +123,10 @@ Cost Function的定义，是为了搞清楚如何把最有可能的直线与数�
 
 这是第一个学会地机器学习算法：**线性回归的梯度下降算法**
 
-首先看梯度下降算法和线性回归算法的对比：
+首先看梯度下降算法和线性回归算法的对比：<br>
 ![梯度下降和线性回归](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E5%92%8C%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92.png)
 
-将这两个算法合并：
+将这两个算法合并：<br>
 ![线性回归梯度下降算法](https://github.com/yiyading/NLP-and-ML/blob/master/img_ML/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E7%9A%84%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AE%97%E6%B3%95.png)
 
 我们刚刚使用的算法有时也称为批量梯度下降。”批量梯度下降 指的是在梯度下降的每一步中我们都用到了所有的训练样本。
