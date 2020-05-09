@@ -13,7 +13,7 @@
 曹健老师mooc:
 > https://www.icourse163.org/learn/PKU-1002536002#/learn/announce
 
-![ML-first](https://github.com/yiyading/NLP-and-ML/blob/master/ML-first.md):
+[ML-first](https://github.com/yiyading/NLP-and-ML/blob/master/ML-first.md):
 > 1. 通过房价预测和癌症介绍监督学习中的回归问题和分类问题的定义。
 > 2. 介绍无监督学习的特征->聚类算法。
 > 3. 通过房价预测介绍单变量线性回归的模型建立和代价函数/梯度下降。
