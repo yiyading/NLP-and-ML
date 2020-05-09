@@ -13,6 +13,12 @@
 曹健老师mooc:
 > https://www.icourse163.org/learn/PKU-1002536002#/learn/announce
 
+![ML-first](https://github.com/yiyading/NLP-and-ML/blob/master/ML-first.md):
+> 1. 通过房价预测和癌症介绍监督学习中的回归问题和分类问题的定义。
+> 2. 介绍无监督学习的特征->聚类算法。
+> 3. 通过房价预测介绍单变量线性回归的模型建立和代价函数/梯度下降。
+> 4. 介绍线性回归梯度下降算法。
+
 [ML-fifth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-fifth.md)主要介绍NN网络的构成以及NN网络中如何使用梯度下降和梯度检验的作用
 
 [ML-sixth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-sixth.md)主要介绍对模型出现bias/variance问题时的优化方法，以及何时选择这些优化方法
