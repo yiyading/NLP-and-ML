@@ -4,13 +4,13 @@
 非监督学习与监督学习的不同点是：
 > 1. 监督学习中，我们有一个有标签的训练集，我们的目标是找到能够区分正负样本的决策边界。
 > 2. 非监督学习中，我们的数据没有任何标签，如下图所示。
-> ![ML-eighth1]()
+> ![ML-eighth1](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth1.png)
 
 非监督学习中，我们将没有任何标签的训练集输入到一个算法，让算法找到这个训练集中的内在结构。
 
 一个能找到下图中圈出的点集（簇）的算法，称为聚类算法。
 
-![ML-eighth2]()
+![ML-eighth2](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth2.png)
 
 ## 1.K-means algorithm（K-均值算法）
 K-means是最普及的聚类算法，其功能是将一个无标签数据集聚类成不同的簇。
@@ -24,18 +24,18 @@ K-means是一个迭代算法，假设我们想要将数据集聚类成K个簇，
 下面是一个聚类实例：
 
 迭代一次：<br>
-![ML-eigith3]()
+![ML-eigith3](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth3.png)
 
 迭代三次：<br>
-![ML-eighth4]()
+![ML-eighth4](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth4.png)
 
 迭代十次：<br>
-![ML-eigheh5]()
+![ML-eigheh5](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth5.png)
 
 ci代表第i个数据距离最近**聚类中心**的距离，μk代表**聚类中心**，迭代过程如下列伪代码所示：
 > k代表第k个聚类中心，K代表总共有K个聚类中心。
 
-![ML-eighen6]()
+![ML-eighen6](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth6.png)
 
 从上述伪代码中可以看到，算法分为两步：
 1. 第一个for循环是**赋值步骤**，即对每一个样例i，计算其应该属于哪一个类。
@@ -48,7 +48,7 @@ K-均值算法每一次迭代过程，都是一个重新分类的过程，样例
 
 K-均值最小化的目标是寻最小的x，因此K-均值的代价函数（又称为**畸变函数（Distortion function给）**为：
 
-![ML-eighth7]()
+![ML-eighth7](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth7.png)
 
 > 从上一小节中的伪代码中可以知道，迭代过程的第一个循环用于减少ci引起的代价，第二个循环用于减小ui引起的代价函数。迭代过程一定是每次都在减小代价函数，否则会出现错误。
 
@@ -64,7 +64,7 @@ K-均值的一个问题在于，它有可能停留在一个局部最小值，而
 
 为了避免局部最小值的问题，我们通常运行多次K-均值算法，每次都重新进行随机初始化，最后再比较多次K-均值的结果，选择畸变函数（代价函数）最小的结果。伪代码如下图所示：
 
-![ML-eighth8]()
+![ML-eighth8](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth8.png)
 > 这种方法在K较小（2~10）时还可行，但如果K较大，这么做也可能不会显著改善。
 
 ## 4.Choosing the number of clusters（选择聚类数）
@@ -74,7 +74,7 @@ K-均值的一个问题在于，它有可能停留在一个局部最小值，而
 
 在讨论选择聚类数的方法时，有可能会谈及一个方法叫做**“Elbow method（肘部法则）”**。
 
-![ML-eighth9]()
+![ML-eighth9](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth9.png)
 
 左图这条曲线很像人的肘部，在这种模式下，当K小于3时，畸变值下降的非常快；K大于3时，畸变值下降的就很慢。
 
@@ -93,21 +93,21 @@ Data Compression不但能压缩数据，进而使用较少的计算机内存或�
 
 2D降维至1D的过程如下图所示：
 
-![ML-eighth10]()
+![ML-eighth10](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth10.png)
 
 3D降维至2D的过程与上图类似，是将三维空间中的点投射到二维平面上。如下图所示：
-![ML-eighth11]()
+![ML-eighth11](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth11.png)
 
 这种投射的处理过程，可以将任何维度的数据降到任何想要的维度（1000D->100D）。
 
 ## 2.动机二：数据可视化（Motivation 2：Visualization）
 如下图所示，每一个国家对应50个特征（如GDP，人均GDP，平均寿命等）。
 
-![ML-eighth12]()
+![ML-eighth12](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth12.png)
 
 如果想将这个50维的数据可视化是不可能的。使用降维的方法将其降维至二维，我们便可以将其可视化。如下图所示：
 
-![ML-eighth13]()
+![ML-eighth13](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth13.png)
 
 **注意**：降维的算法只负责减少维数，新产生特征的意义必须由我们自己去挖掘。
 
@@ -120,13 +120,13 @@ Data Compression不但能压缩数据，进而使用较少的计算机内存或�
 
 下图展示了使用PCA将2D降维至1D：
 
-![ML-eighth14]()
+![ML-eighth14](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth14.png)
 
 PCA与线性回归是两种不同的算法，PCA是最小化投射误差（Projected Error），线性回归最小化预测误差。
 
 下面两幅图片中，左图为线性回归，右图为PCA：
 
-![ML-eighth15]()
+![ML-eighth15](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth15.png)
 
 PCA技术的一大好处是对数据进行降维的处理。将n个特征降维到k个，可以用来进行数据压缩，如果100维的向量最后可以用10维来表示，那么压缩率为90%。在图像处理领域的KL变换使用PCA做图像压缩。但PCA要保证降维后，还要保证数据的特性损失最小。
 
@@ -135,11 +135,11 @@ PCA技术的一个很大的优点是它完全无参数限制。在PCA的计算�
 PCA算法过程：PCA从n维降至k维
 1. 均值归一化（所有特征均值为0）。特征替换的过程如下图所示：
 
-![ML-eighth16]()
+![ML-eighth16](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth16.png)
 
 2. 计算**协方差矩阵（covariance matrix）Σ**：
 
-![ML-eighth17]()
+![ML-eighth17](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth17.png)
 
 3. 计算**协方差矩阵Σ的特征向量（eigenvectors）**
 
@@ -154,7 +154,7 @@ PCA是减少投射的平均均方误差。
 
 下图表示了步骤中的数学表达式：
 
-![ML-eighth18]()
+![ML-eighth18](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth18.png)
 
 > 如果我们希望比例小于1%，就意味着原来数据的偏差有99%都保留下来了。如果我们选择保留95%的偏差，便能非常显著的降低模型中特征的维度。
 
@@ -167,7 +167,7 @@ PCA可以将1000D的数据降维到100D。
 
 如下图所示，在从2D到1D的过程中，会经历一个U，在升维的时候，只需U\*Z，即可得到Xapprox，它近似等于x
 
-![ML-eighth19]()
+![ML-eighth19](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth19.png)
 
 这就是从低维回到未压缩前的过程。
 
