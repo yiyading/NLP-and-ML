@@ -32,7 +32,9 @@ K-means是一个迭代算法，假设我们想要将数据集聚类成K个簇，
 迭代十次：<br>
 ![ML-eigheh5](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth5.png)
 
-c^(i)^代表第i个数据距离最近**聚类中心**的距离，μ~k~代表**聚类中心**，迭代过程如下列伪代码所示：
+c^(i)^ 代表第i个数据距离最近**聚类中心**的距离， μ~k~ 代表**聚类中心**，迭代过程如下列伪代码所示：
+- [ ] 1
+- [x] 2
 > k代表第k个聚类中心，K代表总共有K个聚类中心。
 
 ![ML-eighen6](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth6.png)
