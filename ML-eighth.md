@@ -4,7 +4,7 @@
 非监督学习与监督学习的不同点是：
 > 1. 监督学习中，我们有一个有标签的训练集，我们的目标是找到能够区分正负样本的决策边界。
 > 2. 非监督学习中，我们的数据没有任何标签，如下图所示。<br>
-> ![ML-eighth1](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth1.png)
+> ![ML-eighth1](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth1.jpg#pic_center)
 
 非监督学习中，我们将没有任何标签的训练集输入到一个算法，让算法找到这个训练集中的内在结构。
 
@@ -30,7 +30,7 @@ K-means是一个迭代算法，假设我们想要将数据集聚类成K个簇，
 ![ML-eighth4](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth4.png)
 
 迭代十次：<br>
-![ML-eigheh5](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth5.png #pic_center)
+![ML-eigheh5](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth5.png)
 
 c^(i)^ 代表第i个数据距离最近**聚类中心**的距离， μ~k~ 代表**聚类中心**，迭代过程如下列伪代码所示：
 > k代表第k个聚类中心，K代表总共有K个聚类中心。
