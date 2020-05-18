@@ -4,13 +4,13 @@
 非监督学习与监督学习的不同点是：
 > 1. 监督学习中，我们有一个有标签的训练集，我们的目标是找到能够区分正负样本的决策边界。
 > 2. 非监督学习中，我们的数据没有任何标签，如下图所示。<br>
-> ![ML-eighth1](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth1.jpg#pic_center)
+> ![ML-eighth1](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth1.jpg)
 
 非监督学习中，我们将没有任何标签的训练集输入到一个算法，让算法找到这个训练集中的内在结构。
 
 一个能找到下图中圈出的点集（簇）的算法，称为聚类算法。
 
-![ML-eighth2](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth2.jpg =60*60)
+![ML-eighth2](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth2.jpg=60*60)
 
 ## 1.K-means algorithm（K-均值算法）
 K-means是最普及的聚类算法，其功能是将一个无标签数据集聚类成不同的簇。
