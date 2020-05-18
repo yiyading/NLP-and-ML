@@ -10,9 +10,10 @@
 
 一个能找到下图中圈出的点集（簇）的算法，称为聚类算法。
 <div align="center">
-	<img src="img/ML-eighth2.jpg">
+	<img src="img/ML-eighth2.jpg" alt="yyd">
 	<!-- ![ML-eighth2](img/ML-eighth2.jpg) -->
 </div>
+
 ## 1.K-means algorithm（K-均值算法）
 K-means是最普及的聚类算法，其功能是将一个无标签数据集聚类成不同的簇。
 
