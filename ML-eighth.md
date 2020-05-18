@@ -9,9 +9,10 @@
 非监督学习中，我们将没有任何标签的训练集输入到一个算法，让算法找到这个训练集中的内在结构。
 
 一个能找到下图中圈出的点集（簇）的算法，称为聚类算法。
-
-![ML-eighth2](img/ML-eighth2.jpg)
-
+<div align="center">
+	<img width="500" height="350" src="img/ML-eighth2.jpg">
+	//![ML-eighth2](img/ML-eighth2.jpg)
+</div>
 ## 1.K-means algorithm（K-均值算法）
 K-means是最普及的聚类算法，其功能是将一个无标签数据集聚类成不同的簇。
 
