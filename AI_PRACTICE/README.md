@@ -6,5 +6,6 @@
 
 [breakpoint断点续训](https://github.com/yiyading/NLP-and-ML/tree/master/AI_PRACTICE/breakpoint%E6%96%AD%E7%82%B9%E7%BB%AD%E8%AE%AD)中的[AI-third](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/breakpoint%E6%96%AD%E7%82%B9%E7%BB%AD%E8%AE%AD/AI-third.md)介绍了如何将需要多次训练的神经网络的训练参数保存下来，以供使用。[predict_picture.py](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/breakpoint%E6%96%AD%E7%82%B9%E7%BB%AD%E8%AE%AD/predict_picture.py)了如何对图片进行预测
 
-[卷积神经网络](卷积神经网络/)主要介绍如何搭建CNN，BN，Pooling，Dropout，Padding等，以及一些实战模型
+[卷积神经网络](卷积神经网络/)主要介绍如何搭建CNN，BN，Pooling，Dropout，Padding等，以及一些实战模型和激活函数
+
 
