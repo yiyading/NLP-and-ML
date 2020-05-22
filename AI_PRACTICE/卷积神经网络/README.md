@@ -1,4 +1,4 @@
-[CNN.md](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/CNN.md)：如何搭建CNN
+[CNN.md](CNN.md)：如何搭建CNN
 
 以下训练实例中都包含断点续训
 
