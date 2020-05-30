@@ -24,6 +24,12 @@
 > 2. 介绍多变量线性回归梯度下降中的特征缩放和学习率。
 > 3. 介绍多变量线性回归中由特征构成的多项式方程和正规方程。
 
+[ML-third](https://github.com/yiyading/NLP-and-ML/blob/master/ML-third.md)
+> 1. 介绍逻辑回归中的二元分类与决策边界
+> 2. 介绍重定义代价函数的目的和距离
+> 3. 总结了代价函数和梯度下降的迭代公式
+> 4. 从二分类扩展到多类别分类问题
+
 [ML-fifth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-fifth.md)主要介绍NN网络的构成以及NN网络中如何使用梯度下降和梯度检验的作用
 
 [ML-sixth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-sixth.md)主要介绍对模型出现bias/variance问题时的优化方法，以及何时选择这些优化方法
