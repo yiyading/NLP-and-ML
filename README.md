@@ -30,9 +30,20 @@
 > 3. 总结了代价函数和梯度下降的迭代公式
 > 4. 从二分类扩展到多类别分类问题
 
-[ML-fifth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-fifth.md)主要介绍NN网络的构成以及NN网络中如何使用梯度下降和梯度检验的作用
+[ML-fourth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-fourth.md)
+> 1. 介绍L1和L2正则化
+> 2. 介绍L1和L2正则化在线性回归和逻辑回归中的应用方程
 
-[ML-sixth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-sixth.md)主要介绍对模型出现bias/variance问题时的优化方法，以及何时选择这些优化方法
+[ML-fifth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-fifth.md)主要介绍NN网络的构成以及NN网络中如何使用梯度下降和梯度检验的作用
+> 1. 介绍NN网络的构成
+> 2. NN网络如何使用梯度下降
+> 3. 梯度检验的作用
+> **反向传播中的梯度通过逐层进行下降**
+
+[ML-sixth](https://github.com/yiyading/NLP-and-ML/blob/master/ML-sixth.md)
+> 1. 介绍如何评估一个模型的好坏 
+> 2. 介绍模型的选择和交叉验证数据集的作用
+> 3. 介绍偏差（bias）和方差（variance）的产生原因以及解决方案
 
 [ML-seventh](https://github.com/yiyading/NLP-and-ML/blob/master/ML-seventh.md)：
 > 1. 通过描述搭建垃圾邮件分类器的原理，来说明误差分析（error analysis）的优缺点。
