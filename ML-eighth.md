@@ -34,7 +34,7 @@ K-means是一个迭代算法，假设我们想要将数据集聚类成K个簇，
 迭代十次：<br>
 ![ML-eigheh5](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth5.png)
 
-c^(i)^ 代表第i个数据距离最近**聚类中心**的距离， μ~k~ 代表**聚类中心**，迭代过程如下列伪代码所示：
+c(i) 代表第i个数据距离最近**聚类中心**的距离， μk 代表**聚类中心**，迭代过程如下列伪代码所示：
 > k代表第k个聚类中心，K代表总共有K个聚类中心。
 
 ![ML-eighen6](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth6.png)
@@ -74,7 +74,7 @@ K-均值的一个问题在于，它有可能停留在一个局部最小值，而
 
 通常是根据不同的问题，人工选择聚类数。
 
-在讨论选择聚类数的方法时，有可能会谈及一个方法叫做**“Elbow method（肘部法则）”**。
+在讨论选择聚类数的方法时，有可能会谈及一个方法叫做**Elbow method（肘部法则）**。
 
 ![ML-eighth9](https://github.com/yiyading/NLP-and-ML/blob/master/img/ML-eighth9.png)
 
