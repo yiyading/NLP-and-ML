@@ -162,6 +162,10 @@ PCA是减少投射的平均均方误差。
 
 通过选定的不同比例，来确定k的取值。
 
+算法的伪代码如下：
+
+![ML-eighth20](img/ML-eighth20.jpg)
+
 ## 5.Reconstruction from Compressed Representation（压缩表示的重建）
 PCA可以将1000D的数据降维到100D。
 
