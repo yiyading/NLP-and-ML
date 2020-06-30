@@ -10,6 +10,11 @@
 > 如图使用6个卷积核，对输入层进行两次特征提取，output层channel数为2.<br>
 > ![CNN1](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/img/CNN1.png)
 
+[CNN卷积核选取问题](CNN卷积核选取问题.md)
+
+[卷积神经网络适用于图像和视频领域](卷积神经网络适用于图像和视频领域.md)
+
+
 **感受野**：卷积神经网络各输出层每个像素点在原始图像上的映射区域大小。
 ![CNN2](https://github.com/yiyading/NLP-and-ML/blob/master/AI_PRACTICE/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/img/CNN2.png)
 
