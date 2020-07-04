@@ -7,8 +7,7 @@ tf.keras.layers.Conv2D(
         activation='relu' or 'sigmoid' or 'tanh' or 'softmax',  # 如果有BN此层不写
 )
 
-# 在实际的网路搭建中，神经网络会有很多层，因此会采用tf.keras.models.Sequential函数
-    进行搭建
+# 在实际的网路搭建中，神经网络会有很多层，因此会采用tf.keras.models.Sequential函数进行搭建
 model = tf.keras.models.Sequential([
         Conv2D(input_shape=(32, 32, 3), filters=32, kernel_size=(5,5), padding='sa    me', activation='relu'),
         MaxPooling2D(),
