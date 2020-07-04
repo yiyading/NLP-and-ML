@@ -6,7 +6,7 @@ from tensorflow.keras.layers import Conv2D,BatchNormalization,Activation,MaxPool
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-model_save_path = './checkpoint_cifar10/cifar10.tf'
+model_save_path = 'checkpoint_cifar10/cifar10.tf'
 
 cifar10 = tf.keras.datasets.cifar10
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
