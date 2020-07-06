@@ -8,13 +8,13 @@
 曹健老师mooc:
 > https://www.icourse163.org/learn/PKU-1002536002#/learn/announce
 
-[ML-first](https://github.com/yiyading/NLP-and-ML/blob/master/ML-first.md):
+[ML-first](ML-first):
 > 1. 通过房价预测和癌症介绍监督学习中的回归问题和分类问题的定义。
 > 2. 介绍无监督学习的特征->聚类算法。
 > 3. 通过房价预测介绍单变量线性回归的模型建立和代价函数/梯度下降。
 > 4. 介绍单变量线性回归中的梯度下降算法。
 
-[ML-second](https://github.com/yiyading/NLP-and-ML/blob/master/ML-second.md)
+[ML-second](ML-second)
 > 1. 介绍多变量线性回归中由多变量构成的多特征及其梯度下降。
 > 2. 介绍多变量线性回归梯度下降中的特征缩放和学习率。
 > 3. 介绍多变量线性回归中由特征构成的多项式方程和正规方程。
