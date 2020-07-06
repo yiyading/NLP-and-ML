@@ -9,6 +9,9 @@ Convolution -> Batch Normalization -> Activation -> Polling -> Fc
 卷积如何能提取特征，即卷积的网络结构如下图：
 
 ![CNN8](img/CNN8.png)
+
+[CNN经典网络](CNN经典网络.md)
+
 ## 1. 卷积的概念
 卷积可认为是一种有效提取图像信息中特征的方法。一般使用一个正方形的卷积核遍历图片上的所有点，图像区域每一个像素值乘以卷积核内相对应点的weight，求和，再加上偏置。
 
